@@ -1,0 +1,7 @@
+name: Runner Name
+on: push
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${{ runner.name }}" # runner.nameの参照
