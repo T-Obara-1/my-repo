@@ -10,5 +10,3 @@ jobs:
                 STARTS_WITH_FUNC: ${{ startsWith('Hello', 'He') }} # 文字列が特定の接頭辞で始まるか
                 ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }} # 文字列が特定の接尾辞で終わるか
                 CONTAINS_FUNC2: ${{ contains(github.event.issue.labels.*.name, 'bug') }} # イシューのラベルに特定の文字列が含まれるか
-
-            - run: printenv "${{ contains(github.event.issue.labels.*.name, 'bug') }}" # イシューのラベルに特定の文字列が含まれるかを表示
