@@ -11,7 +11,7 @@ jobs:
                 ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }} # 文字列が特定の接尾辞で終わるか
                 CONTAINS_FUNC2: ${{ contains(github.event.issue.labels.*.name, 'bug') }} # イシューのラベルに特定の文字列が含まれるか
 
-            - run: |
+            - run:
                 if printenv | grep -q "${{ contains(github.event.issue.labels.*.name, 'bug') }}"; then
                     echo "Match found for issue label containing 'bug'."
                 else
