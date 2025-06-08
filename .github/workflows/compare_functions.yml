@@ -12,4 +12,3 @@ jobs:
                 CONTAINS_FUNC2: ${{ contains(github.event.issue.labels.*.name, 'bug') }} # イシューのラベルに特定の文字列が含まれるか
 
             - run: echo "${{ contains(github.event.issue.labels.*.name, 'bug') }}" # イシューのラベルに特定の文字列が含まれるかを表示
-              if: github.event_name == 'issue' # イシューイベントでのみ実行
