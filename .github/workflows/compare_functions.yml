@@ -4,9 +4,18 @@ jobs:
     compare:
         runs-on: ubuntu-latest
         steps:
-            - run: printenv | grep 'FUNC_' # 環境変数のリストを表示
+            - run: printenv | grep '_FUNC' # 環境変数のリストを表示
               env:
                 CONTAINS_FUNC: ${{ contains('Hello', 'ell') }} # 文字列に部分文字列が含まれるか
                 STARTS_WITH_FUNC: ${{ startsWith('Hello', 'He') }} # 文字列が特定の接頭辞で始まるか
                 ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }} # 文字列が特定の接尾辞で終わるか
+                CONTAINS_FUNC2: ${{ contains(github.event.issue.labels.*.name, 'bug') }} # イシューのラベルに特定の文字列が含まれるか
 
+            - run:
+                if printenv | grep -q "${{ contains(github.event.issue.labels.*.name, 'bug') }}"; then
+                    echo "Match found for issue label containing 'bug'."
+                else
+                    echo "No match found for issue label containing 'bug'."
+                fi
+            # 直前のprintenvは何もヒットしない場合でもActionでエラーにしない
+            # 上記の条件分岐により、エラーを防ぎつつ結果を明確にする
