@@ -1,0 +1,13 @@
+name: Repository variables
+on: push
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        steps:
+            - run: printenv | grep `LITERAL_` # 環境変数のリストを表示
+              env:
+                LITERAL_NULL: ${{ null }} # null値の環境変数
+                LITERAL_BOOLEAN: ${{ true }} # 真偽値の環境変数
+                LITERAL_NUMBER: ${{ 1234}} # 数値の環境変数
+                LITERAL_STRING: ${{ 'Hello' }} # 文字列の環境変数
+                LITERAL_OMIT_STRING: World # 文字列の環境変数（省略形）
