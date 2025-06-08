@@ -4,7 +4,7 @@ jobs:
     print:
         runs-on: ubuntu-latest
         steps:
-            - run: printenv | grep `LITERAL_` # 環境変数のリストを表示
+            - run: printenv | grep 'LITERAL_' # 環境変数のリストを表示
               env:
                 LITERAL_NULL: ${{ null }} # null値の環境変数
                 LITERAL_BOOLEAN: ${{ true }} # 真偽値の環境変数
