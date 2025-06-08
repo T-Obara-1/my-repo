@@ -1,4 +1,4 @@
-name: Repository variables
+name: Literals
 on: push
 jobs:
     print:
