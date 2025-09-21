@@ -1,9 +1,9 @@
-name: Conditions
+name: Conditions_02
 on: push
 jobs:
     skip-or-run:
         runs-on: ubuntu-latest
         steps:
-            - run: exit 1
+            #- run: exit 1
             - run: echo "Hello"
               if: ${{ failure() }} # 直前のステップが失敗した場合に実行
