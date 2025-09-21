@@ -5,6 +5,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: |
-                echo "Hello4"
-                ${{ github.run_id }} # ワークフロー実行IDの参照
+                echo "Hello5"
+                echo ${{ github.run_id }} # ワークフロー実行IDの参照
               if: ${{ contains(github.run_id, '1') }} # ワークフロー実行IDで分岐
