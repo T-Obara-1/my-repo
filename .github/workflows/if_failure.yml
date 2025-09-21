@@ -1,4 +1,4 @@
-name: Conditions_02
+name: Status check functions
 on: push
 jobs:
     skip-or-run:
