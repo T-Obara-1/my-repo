@@ -2,7 +2,7 @@ name: Conditions workflow
 on: push
 jobs:
     skip-or-run:
-        if: ${{ github.actor == 'T-Obara-1' }} # 実行ユーザーで分岐
+        if: ${{ github.actor == 'octocat' }} # 実行ユーザーで分岐
         runs-on: ubuntu-latest
         steps:
             - run: |
