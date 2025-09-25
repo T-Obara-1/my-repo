@@ -8,5 +8,5 @@ jobs:
             with:
               # image-ref: nginx:1.11.0 # スキャン対象のコンテナイメージ
               image-ref: nginx:alpine # スキャン対象のコンテナイメージ
-              severiry: CRITICAL # 検出する脆弱性の深刻度
+              severity: CRITICAL # 検出する脆弱性の深刻度
               exit-code: '1' # 脆弱性検出時に終了コード 1 を返す
