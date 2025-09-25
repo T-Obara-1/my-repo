@@ -1,5 +1,5 @@
-import subprocess
-import os
+# import subprocess
+# import os
 # 以下は Bandit によって検出される可能性のあるセキュリティ上の問題を含むコード例です。
 
 # def insecure_eval(user_input):
