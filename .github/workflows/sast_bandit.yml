@@ -1,4 +1,4 @@
-name: Static Application Sucurity Testing
+name: Static Application Security Testing
 on: pull_request
 jobs:
     test:
